@@ -10,7 +10,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Denosys\\\\Validation\\\\": "src/Validation/"
+      "Denosys\\Validation\\": "src/Validation/"
     }
   },
   "config": {
