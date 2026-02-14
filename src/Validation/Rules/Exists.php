@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Validation\Rules;
+namespace Denosys\Validation\Rules;
 
-use CFXP\Core\Database\Connection\Connection;
+use Denosys\Database\Connection\Connection;
 use InvalidArgumentException;
 
 /**

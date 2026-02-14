@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Validation\Rules;
+namespace Denosys\Validation\Rules;
 
-use CFXP\Core\Validation\Rules\RuleInterface;
+use Denosys\Validation\Rules\RuleInterface;
 
 class Alpha implements RuleInterface
 {

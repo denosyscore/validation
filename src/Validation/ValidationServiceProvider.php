@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Validation;
+namespace Denosys\Validation;
 
-use CFXP\Core\Container\ContainerInterface;
-use CFXP\Core\Database\Connection\Connection;
-use CFXP\Core\ServiceProviderInterface;
-use CFXP\Core\Exceptions\ExceptionHandlerChain;
+use Denosys\Container\ContainerInterface;
+use Denosys\Database\Connection\Connection;
+use Denosys\Contracts\ServiceProviderInterface;
+use Denosys\Exceptions\ExceptionHandlerChain;
 use Psr\EventDispatcher\EventDispatcherInterface;
-use CFXP\Core\Exceptions\ContainerResolutionException;
-use CFXP\Core\Validation\Handlers\ValidationExceptionHandler;
+use Denosys\Container\Exceptions\ContainerResolutionException;
+use Denosys\Validation\Handlers\ValidationExceptionHandler;
 use Throwable;
 
 /**

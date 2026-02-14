@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Validation\Rules;
+namespace Denosys\Validation\Rules;
 
 /**
  * Numeric validation rule

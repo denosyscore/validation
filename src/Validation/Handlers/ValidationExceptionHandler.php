@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Validation\Handlers;
+namespace Denosys\Validation\Handlers;
 
-use CFXP\Core\Exceptions\ExceptionHandlerInterface;
-use CFXP\Core\Exceptions\ExceptionHandlerTrait;
-use CFXP\Core\Http\ResponseFactory;
-use CFXP\Core\Validation\ValidationException;
+use Denosys\Http\Exceptions\ExceptionHandlerInterface;
+use Denosys\Http\Exceptions\ExceptionHandlerTrait;
+use Denosys\Http\ResponseFactory;
+use Denosys\Validation\ValidationException;
 use Throwable;
 use Psr\Http\Message\ResponseInterface;
 

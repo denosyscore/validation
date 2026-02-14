@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Validation;
+namespace Denosys\Validation;
 
 use ReflectionClass;
 use DirectoryIterator;
-use CFXP\Core\Validation\Rules\RuleInterface;
+use Denosys\Validation\Rules\RuleInterface;
 
 class RuleRegistrar
 {
