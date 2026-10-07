@@ -14,6 +14,10 @@ composer require denosyscore/validation
 
 - src/Validation/*
 
+The `unique:accounts,email,1` rule checks the `email` column in `accounts`
+while excluding the row with `id = 1`. Its third positional parameter is
+named `ignore_id` by `Unique::parameterNames()`.
+
 ## Development
 
 composer validate --strict
