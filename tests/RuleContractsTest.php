@@ -72,6 +72,6 @@ final class RuleContractsTest extends TestCase
 
     public function testRegexStillAcceptsPositionalPatternWhenCalledDirectly(): void
     {
-        self::assertTrue(new Regex()->validate('code', 'ABC-123', ['/^ABC-\\d{3}$/']));
+        self::assertTrue((new Regex())->validate('code', 'ABC-123', ['/^ABC-\\d{3}$/']));
     }
 }
