@@ -67,18 +67,21 @@ class ValidationServiceProvider implements ServiceProviderInterface
 
     private function attachConnectionIfAvailable(ContainerInterface $container, Rules\Unique|Rules\Exists $rule): void
     {
-        if (!$container->has('db')) {
-            return;
-        }
+        foreach ([Connection::class, 'db'] as $binding) {
+            if (!$container->has($binding)) {
+                continue;
+            }
 
-        try {
-            $connection = $container->get('db');
-        } catch (Throwable) {
-            return;
-        }
+            try {
+                $connection = $container->get($binding);
+            } catch (Throwable) {
+                continue;
+            }
 
-        if ($connection instanceof Connection) {
-            $rule->setConnection($connection);
+            if ($connection instanceof Connection) {
+                $rule->setConnection($connection);
+                return;
+            }
         }
     }
 
