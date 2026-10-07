@@ -26,6 +26,20 @@ The `unique:accounts,email,1` rule checks the `email` column in `accounts`
 while excluding the row with `id = 1`. Its third positional parameter is
 named `ignore_id` by `Unique::parameterNames()`.
 
+## Direct field errors
+
+When a field-specific failure is discovered after ordinary rule validation,
+raise it without constructing an empty validator in the caller:
+
+```php
+throw \Denosys\Validation\ValidationException::withMessages([
+    'email' => 'The email address is unavailable.',
+]);
+```
+
+Values may be a string or a non-empty list of strings. The existing
+`ValidationException(Validator $validator)` constructor remains supported.
+
 ## Development
 
 composer validate --strict
