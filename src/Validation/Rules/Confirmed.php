@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Denosys\Validation\Rules;
 
-use InvalidArgumentException;
-
 class Confirmed implements RuleInterface
 {
     /**
@@ -14,12 +12,10 @@ class Confirmed implements RuleInterface
      */
     public function validate(string $field, mixed $value, array $parameters = [], array $data = []): bool
     {
-        $confirmationField = $parameters['custom_field'] ?: $field . '_confirmation';
+        $confirmationField = ($parameters['custom_field'] ?? null) ?: $field . '_confirmation';
 
         if (!array_key_exists($confirmationField, $data)) {
-            throw new InvalidArgumentException(
-                "The confirmation field [{$confirmationField}] does not exist."
-            );
+            return false;
         }
 
         return $value === $data[$confirmationField];
