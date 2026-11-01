@@ -18,11 +18,11 @@ class Regex implements RuleInterface
             return false;
         }
 
-        if (!isset($parameters[0])) {
+        $pattern = $parameters['pattern'] ?? $parameters[0] ?? null;
+
+        if ($pattern === null) {
             throw new InvalidArgumentException('Regex rule requires a pattern parameter');
         }
-
-        $pattern = $parameters[0];
 
         // Add delimiters if not present
         if (!preg_match('/^[\/#~]/', $pattern)) {
@@ -49,7 +49,7 @@ class Regex implements RuleInterface
 public static function parameterNames(): array
 
     {
-        return [];
+        return ['pattern'];
     }
 
     public static function ruleName(): string
